@@ -1,5 +1,5 @@
-const requestUrl =
-  "https://api.openweathermap.org/data/2.5/weather?lat=57&lon=-2.15&appid={142fd521b11b6265b5f9c625dcbf7c87}&units=imperial";
+const city = "Denver";
+let requestUrl = `api.openweathermap.org/data/2.5/forecast?q=${city}&appid=142fd521b11b6265b5f9c625dcbf7c87&units=imperial`;
 fetch(requestUrl)
   .then(function (response) {
     if (response.ok) {
@@ -10,10 +10,21 @@ fetch(requestUrl)
   })
   .then(function (data) {
     console.log("Fetch Response \n-------------");
-    console.log(temperature.value);
+    console.log(data);
+  });
+requestUrl =
+  "https://api.openweathermap.org/data/2.5/weather?lat=39.73&lon=104.99&appid=142fd521b11b6265b5f9c625dcbf7c87&units=imperial";
+fetch(requestUrl)
+  .then(function (response) {
+    if (response.ok) {
+      return response.json();
+    } else {
+      alert(`Error:${response.statusText}`);
+    }
   })
-  .catch(function (error) {
-    alert("Unable to connect to openweathermap");
+  .then(function (data) {
+    console.log("Fetch Response \n-------------");
+    console.log(data);
   });
 
 // function weatherFetchApi() {
