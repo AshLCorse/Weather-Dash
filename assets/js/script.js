@@ -1,5 +1,5 @@
 const city = "Denver";
-let requestUrl = `api.openweathermap.org/data/2.5/forecast?q=${city}&appid=142fd521b11b6265b5f9c625dcbf7c87&units=imperial`;
+let requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=142fd521b11b6265b5f9c625dcbf7c87&units=imperial`;
 fetch(requestUrl)
   .then(function (response) {
     if (response.ok) {
